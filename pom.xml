@@ -17,6 +17,12 @@
         <version-jnx>1.41.0</version-jnx>
         <version-maven-surefire>3.0.0-M5</version-maven-surefire>
         <version-jsoup>1.17.2</version-jsoup>
+        <version-jakarta-mail>2.0.1</version-jakarta-mail>
+        <version-junit>5.10.2</version-junit>
+
+        <!-- Keep/Vertx versions are taken into account when you install Keep Jar into the local Maven -->
+        <version-keep>1.30.6</version-keep>
+        <version-vertx>4.5.7</version-vertx>
     </properties>
 
     <dependencies>
@@ -39,32 +45,41 @@
         <dependency>
             <groupId>jakarta.mail</groupId>
             <artifactId>jakarta.mail-api</artifactId>
-            <version>2.0.1</version>
+            <version>${version-jakarta-mail}</version>
         </dependency>
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>jakarta.mail</artifactId>
-            <version>2.0.1</version>
+            <version>${version-jakarta-mail}</version>
         </dependency>
 
+        <!-- This library should be imported from the local installation. See Readme.md file. -->
         <dependency>
-            <groupId>com.developi.keep.ext</groupId>
-            <artifactId>keep-ext-helper</artifactId>
-            <version>1.0.12</version>
+            <groupId>com.hcl.domino.keep</groupId>
+            <artifactId>keep-core</artifactId>
+            <version>${version-keep}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+            <version>${version-vertx}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.10.2</version>
+            <version>${version-junit}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.developi</groupId>
-            <artifactId>test-domino-jnx</artifactId>
-            <version>1.0</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${version-junit}</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>

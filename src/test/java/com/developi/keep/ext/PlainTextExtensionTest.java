@@ -1,6 +1,6 @@
 package com.developi.keep.ext;
 
-import com.developi.domino.AbstractNotesRuntimeTest;
+import com.developi.domino.test.AbstractNotesRuntimeTest;
 import com.hcl.domino.DominoClient;
 import com.hcl.domino.commons.org.apache.commons.mail.Email;
 import com.hcl.domino.commons.org.apache.commons.mail.HtmlEmail;
